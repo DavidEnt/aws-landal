@@ -1,0 +1,101 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "LandalStats.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "LandalStats.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "LandalStats": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LandalStats.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/99d7c91956a25a038bb36d19b7d5f8cbe8d89347c133ffd5ea97d3a71f325e37.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "LandalStats.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "LandalStats.assets"
+      ],
+      "metadata": {
+        "/LandalStats/LandalLambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LandalLambdaServiceRoleC21FAD95"
+          }
+        ],
+        "/LandalStats/LandalLambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LandalLambdaServiceRoleDefaultPolicy1610A58C"
+          }
+        ],
+        "/LandalStats/LandalLambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LandalLambda9D172A74"
+          }
+        ],
+        "/LandalStats/weekly-strava-trigger/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "weeklystravatriggerE7E1A693"
+          }
+        ],
+        "/LandalStats/weekly-strava-trigger/AllowEventRuleLandalStatsLandalLambdaCEF324B1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "weeklystravatriggerAllowEventRuleLandalStatsLandalLambdaCEF324B15B0D999D"
+          }
+        ],
+        "/LandalStats/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/LandalStats/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/LandalStats/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/LandalStats/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "LandalStats"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

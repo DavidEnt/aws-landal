@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "aws-landal"
+version = "0.1.0"
+description = ""
+authors = ["David Enthoven <david.enthoven@live.nl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.22.0"
+bs4 = "^0.0.2"
+boto3 = "^1.34.144"
+
+[tool.poetry.group.dev.dependencies]
+aws-cdk-lib = "^2.149.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
