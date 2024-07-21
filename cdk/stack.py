@@ -33,6 +33,6 @@ class ScheduledLambdaContainerStack(Stack):
         schedule = events.Rule(
             self,
             "weekly-landal-scraper-trigger",
-            targets=[events_targets.LambdaFunction(lambda_function)],
+            targets=[events_targets.LambdaFunction(lambda_function)], # type: ignore
             schedule=events.Schedule.cron(minute="0", hour="21", week_day="1",)
         )
