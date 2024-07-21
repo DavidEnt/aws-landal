@@ -17,7 +17,7 @@ class ScheduledLambdaContainerStack(Stack):
         lambda_function = _lambda.DockerImageFunction(
             self,
             "LandalLambda",
-            code=_lambda.DockerImageCode.from_image_asset("../image"),
+            code=_lambda.DockerImageCode.from_image_asset("image"),
             memory_size = 512,
             timeout = Duration.seconds(90)
         )
