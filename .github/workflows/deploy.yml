@@ -35,13 +35,13 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Install dependencies
-        run: npm install -g aws-cdk
+        run: npm install -g aws-cdk@2.126.0
 
       - name: Install requried packages
         run: pip install -r requirements.txt
       
       - name: Synth stack
-        run: cdk synth
+        run: cdk synth --quiet
       
       - name: Deploy stack
-        run: cdk deploy 
+        run: cdk deploy --all --require-approval never

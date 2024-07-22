@@ -22,7 +22,7 @@ def handler(event, context):
     # send output as email
     sqs_client = boto3.client("sqs")
     sqs_client.send_message(
-        QueueUrl="https://sqs.eu-west-1.amazonaws.com/077369991239/AWSEmailer-SQSQueue84D0F801-18fmkebyN175",
+        QueueUrl="https://sqs.eu-west-1.amazonaws.com/077369991239/emails-to-send-out",
         MessageBody=json.dumps(message),
     )
 
