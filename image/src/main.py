@@ -16,9 +16,11 @@ def handler(event, context):
 
     message = {
         "subject": write_subject(dates),
-        "text": write_body(dates),
-        "to": ["david.enthoven@live.nl"],
+        "body_txt": write_body(dates),
+        "to_addresses": ["david.enthoven@live.nl"],
     }
+    print(f"The message to send: {message}")
+
     # send output as email
     sqs_client = boto3.client("sqs")
     sqs_client.send_message(
